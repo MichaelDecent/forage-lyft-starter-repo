@@ -1,15 +1,14 @@
-from abc import ABC
+#!/usr/bin/env python3
+"""This Module describes the SternmanEngine class"""
+from engine.engine_interface import Engine
 
-from car import Car
 
+class SternmanEngine(Engine):
+    """This class defines the criteria for SternmanEngine"""
 
-class SternmanEngine(Car, ABC):
-    def __init__(self, last_service_date, warning_light_is_on):
-        super().__init__(last_service_date)
-        self.warning_light_is_on = warning_light_is_on
+    def __init__(self, warning_light_on: bool) -> None:
+        self.warning_light_on = warning_light_on
 
-    def engine_should_be_serviced(self):
-        if self.warning_light_is_on:
-            return True
-        else:
-            return False
+    def needs_service(self) -> bool:
+        """This determines if the sternman engine needs servicing"""
+        return self.warning_light_on

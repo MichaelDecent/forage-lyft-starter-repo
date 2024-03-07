@@ -1,13 +1,15 @@
-from abc import ABC
+#!/usr/bin/env python3
+"""This Module describes the WilloughbyEngine class"""
+from engine.engine_interface import Engine
 
-from car import Car
 
+class WilloughbyEngine(Engine):
+    """This class defines the criteria for CapuletEngine"""
 
-class WilloughbyEngine(Car, ABC):
-    def __init__(self, last_service_date, current_mileage, last_service_mileage):
-        super().__init__(last_service_date)
-        self.current_mileage = current_mileage
-        self.last_service_mileage = last_service_mileage
+    def __init__(self, current_millage: int, last_service_millage: int) -> None:
+        self.current_millage = current_millage
+        self.last_service_millage = last_service_millage
 
-    def engine_should_be_serviced(self):
+    def needs_service(self) -> bool:
+        """this determins if the willoughby engine needs servicing"""
         return self.current_mileage - self.last_service_mileage > 60000

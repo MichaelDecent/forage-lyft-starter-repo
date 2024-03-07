@@ -1,13 +1,15 @@
-from abc import ABC
+#!/usr/bin/env python3
+"""This Module describes the CapuletEngine class"""
+from engine.engine_interface import Engine
 
-from car import Car
 
+class CapuletEngine(Engine):
+    """This class defines the criteria for CapuletEngine"""
 
-class CapuletEngine(Car, ABC):
-    def __init__(self, last_service_date, current_mileage, last_service_mileage):
-        super().__init__(last_service_date)
+    def __init__(self, current_mileage: int, last_service_mileage: int) -> None:
         self.current_mileage = current_mileage
         self.last_service_mileage = last_service_mileage
 
-    def engine_should_be_serviced(self):
+    def needs_service(self) -> bool:
+        """This determins if the capulet engine needs servicing"""
         return self.current_mileage - self.last_service_mileage > 30000
