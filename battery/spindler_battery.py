@@ -13,4 +13,4 @@ class SpindlerBattery(Battery):
 
     def needs_service(self) -> bool:
         """This determines if the spindler battery needs servicing"""
-        return self.service_threshold_date > self.current_date
+        return self.current_date >= self.service_threshold_date 

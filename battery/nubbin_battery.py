@@ -13,4 +13,4 @@ class NubbinBattery(Battery):
 
     def needs_service(self) -> bool:
         """This determines if the nubbin battery needs servicing"""
-        return self.current_date > self.service_threshold_date 
+        return self.current_date >= self.service_threshold_date 
