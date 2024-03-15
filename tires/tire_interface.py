@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""This Module describes the Engine Class"""
+
+""" this Module describes the Tire Class"""
 from abc import ABC, abstractmethod
 
 
-class Engine(ABC):
-    """This class define an interface for different engine"""
+class Tire(ABC):
+    """This class define an interface for different tires"""
 
     @abstractmethod
     def needs_service() -> bool:

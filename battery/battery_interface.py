@@ -2,6 +2,7 @@
 """ this Module describes the Battery Class"""
 from abc import ABC, abstractmethod
 
+
 class Battery(ABC):
     """This class define an interface for different battery"""
 
